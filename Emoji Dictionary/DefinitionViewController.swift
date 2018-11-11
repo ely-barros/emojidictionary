@@ -10,37 +10,21 @@ import UIKit
 
 class DefinitionViewController: UIViewController {
     
+    @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var definitionLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
-    var emoji = "NO EMOJI"
+    var emoji = Emoji()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        emojiLabel.text = emoji
-        
-        if emoji == "😎" {
-            definitionLabel.text = "Guy with sunglasses"
-        }
-        
-        if emoji == "🇧🇷" {
-            definitionLabel.text = "Brazil flag"
-        }
-        
-        if emoji == "😀" {
-            definitionLabel.text = "A happy dude"
-        }
-        
-        if emoji == "😛" {
-            definitionLabel.text = "Blaaaahhh"
-        }
-        
-        if emoji == "🐹" {
-            definitionLabel.text = "Little hamster"
-        }
-        
+        emojiLabel.text = emoji.stringEmoji
+        birthLabel.text = "Birth: \(emoji.birth)"
+        categoryLabel.text = "Category: \(emoji.category)"
+        definitionLabel.text = "\(emoji.definition)"
     }
 
     override func didReceiveMemoryWarning() {
